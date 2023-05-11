@@ -1,0 +1,78 @@
+<h2 align="center">用戶編輯</h2>
+<form [formGroup]="editUserForm" (ngSubmit)="onSubmit()">
+<mat-dialog-content class="mat-typography">
+<mat-grid-list cols="2" rowHeight="20vh"  >
+
+  <mat-grid-tile >
+
+    <mat-form-field>
+      <mat-label>姓名</mat-label>
+      <input type="text" id="name" name="name" matInput placeholder="請輸入姓名" formControlName="name" required >
+    </mat-form-field>
+  </mat-grid-tile>
+  <mat-grid-tile >
+    <mat-form-field>
+      <mat-label>角色</mat-label>
+      <input type="text" id="role" name="role" matInput  formControlName="role" required >
+    </mat-form-field>
+  </mat-grid-tile>
+  <mat-grid-tile>
+    <mat-form-field>
+      <mat-label>職稱id</mat-label>
+      <input type="text" id="user_id" name="user_id" matInput formControlName="user_id" required >
+    </mat-form-field>
+  </mat-grid-tile>
+  <mat-grid-tile>
+    <mat-form-field>
+      <mat-label>部門</mat-label>
+      <input type="text" matInput  formControlName="department" [matAutocomplete]="autodp">
+    <mat-autocomplete #autodp="matAutocomplete" [displayWith]="displayDpFn">
+      <mat-option *ngFor="let option of filteredDpOptions | async" [value]="option">
+        {{option.department}}
+      </mat-option>
+    </mat-autocomplete>
+    </mat-form-field>
+  </mat-grid-tile>
+  <mat-grid-tile>
+    <mat-form-field>
+      <mat-label>職稱</mat-label>
+      <input type="text" matInput formControlName="position" [matAutocomplete]="autops">
+    <mat-autocomplete #autops="matAutocomplete" [displayWith]="displayPsFn">
+      <mat-option *ngFor="let option of filteredPsOptions | async" [value]="option">
+        {{option.position}}
+      </mat-option>
+    </mat-autocomplete>
+    </mat-form-field>
+  </mat-grid-tile>
+  <mat-grid-tile>
+    <mat-form-field>
+      <mat-label>代理部門</mat-label>
+      <input type="text" matInput  formControlName="proxy_department" [matAutocomplete]="autodep">
+    <mat-autocomplete #autodep="matAutocomplete" [displayWith]="displayPdpFn">
+      <mat-option *ngFor="let option of filteredDepOptions | async" [value]="option">
+        {{option.department}}
+      </mat-option>
+    </mat-autocomplete>
+    </mat-form-field>
+  </mat-grid-tile>
+  <mat-grid-tile>
+    <mat-form-field>
+      <mat-label>代理職稱</mat-label>
+      <input type="text" matInput formControlName="proxy_position" [matAutocomplete]="autodps">
+    <mat-autocomplete #autodps="matAutocomplete" [displayWith]="displayDpsFn">
+      <mat-option *ngFor="let option of filteredDpsOptions | async" [value]="option">
+        {{option.position}}
+      </mat-option>
+    </mat-autocomplete>
+    </mat-form-field>
+  </mat-grid-tile>
+
+</mat-grid-list>
+
+
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>取消</button>
+  <button type="submit" mat-button color="primary" >編輯</button>
+</mat-dialog-actions>
+</form>

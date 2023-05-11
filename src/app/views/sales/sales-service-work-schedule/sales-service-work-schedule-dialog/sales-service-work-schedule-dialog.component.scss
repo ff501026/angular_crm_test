@@ -1,0 +1,6 @@
+@import '/src/scss/custom';
+@import '../sales-service-work-schedule.component.scss';
+
+.mat-radio-button ~ .mat-radio-button {
+  margin-left: 16px;
+}

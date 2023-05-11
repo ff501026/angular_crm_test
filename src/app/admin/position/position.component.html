@@ -1,0 +1,39 @@
+
+<button id="user-create" mat-raised-button color="primary" (click)="openCreate()" >創建</button>
+<mat-table [dataSource]="organizationDataSource">
+  <ng-container matColumnDef="ID">
+    <mat-header-cell *matHeaderCellDef>ID</mat-header-cell>
+    <mat-cell *matCellDef="let row">{{row.ID}}</mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="position">
+    <mat-header-cell *matHeaderCellDef>職稱</mat-header-cell>
+    <mat-cell *matCellDef="let row">{{row.position}}</mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="department">
+    <mat-header-cell *matHeaderCellDef>部門</mat-header-cell>
+    <mat-cell *matCellDef="let row">{{row.department}}</mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="review_level">
+    <mat-header-cell *matHeaderCellDef>簽核等級</mat-header-cell>
+    <mat-cell *matCellDef="let row">{{row.review_level}}</mat-cell>
+  </ng-container>
+
+  <<ng-container matColumnDef="management">
+    <mat-header-cell *matHeaderCellDef>
+      <u>管理</u>
+    </mat-header-cell>
+    <mat-cell *matCellDef="let row">
+      <button mat-button color="primary" (click)="openEdit(row)" >編輯</button>
+      <button mat-button color="warn" (click)="openDel(row)">刪除</button>
+    </mat-cell>
+  </ng-container>
+
+ <mat-header-row *matHeaderRowDef="['ID', 'position',  'department','review_level', 'management']"></mat-header-row>
+ <mat-row *matRowDef="let userRow; columns: ['ID', 'position', 'department', 'review_level','management']"></mat-row>
+</mat-table>
+<mat-paginator
+               [length]="totalCount"
+               [pageIndex]="0"
+               [pageSize]="10"
+               [pageSizeOptions]="[5, 10, 15]">
+</mat-paginator>

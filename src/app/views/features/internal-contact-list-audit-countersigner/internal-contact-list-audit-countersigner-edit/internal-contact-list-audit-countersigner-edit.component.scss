@@ -1,0 +1,107 @@
+@import '/src/scss/container_children';
+@import '/src/scss/custom';
+.example-h2 {
+  margin: 10px;
+}
+
+.example-section {
+  display: flex;
+  align-content: center;
+  align-items: center;
+  height: 60px;
+}
+
+.example-margin {
+  margin: 0 10px;
+}
+.mat-tab-group {
+  margin-bottom: 48px;
+}
+mat-form-field{
+  margin-top: 10px;
+}
+.Classification{
+  width: 85%;
+  margin-left: 16px;
+  margin-right: -10px;
+}
+.replied_date{
+  width:95%;
+  margin-left: 16px;
+}
+.summary_description{
+  width:95%;
+  margin-left: 16px;
+  margin-top: -30px;
+}
+.task_scheduled{
+  width:95%;
+  margin-left: 16px;
+}
+.opinions{
+    width:95%;
+    margin-left: 16px;
+}
+.form_text{
+  margin-left: 13px;
+  margin-top: 15px;
+}
+.name{
+   color: #FF3D57;
+}
+.date{
+  margin-right: 20px;
+  color: #3f5eb5;
+}
+.handling_situation{
+  margin-left: 5px;
+  margin-right: 10px;
+  width: 42%;
+}
+.line{
+  margin-top: -25px;
+}
+.text-context-date{
+  margin-left: 20px;
+}
+.mr-10{
+  margin-right: 10px;
+}
+.blue-text{
+  margin-bottom: 10px;
+  text-align: start;
+  margin-left: 16px;
+  color: #3f5eb5;
+}
+td{
+  text-align: start;
+}
+.deepblue-text{
+  color: #3f5eb5;
+}
+.red-text{
+  color: #FF3D57;
+}
+.countersigning_unit{
+  width: 150px;
+  margin: 10px;
+}
+mat-list-item{
+  margin-bottom: 15px;
+}
+.text-context{
+  margin-left: 20px;
+}
+.signoff_process_content{
+  margin-bottom: -1px;
+}
+.signoff_process{
+  ::ng-deep {
+    .mat-form-field-infix {
+        border: 0px !important;
+    }
+    .mat-form-field-appearance-outline .mat-select-arrow-wrapper {
+        transform: none !important;
+    }
+  }
+}

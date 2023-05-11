@@ -1,0 +1,47 @@
+@import '/src/scss/container_children';
+@import '/src/scss/custom';
+
+.mat-radio-button ~ .mat-radio-button {
+  margin-left: 16px;
+}
+.card-h{
+  width: 450px;
+}
+.offcanvas-title{
+  margin-left: -18px;
+}
+.form-h{
+  width: 468px;
+}
+.mat-typography{
+  padding-top: 10px;
+}
+.device_number{
+  width:215px;
+  margin-right: 10px;
+  margin-top: 15px;
+}
+.fault_conditions{
+  width:215px;
+  margin-right: 10px;
+}
+.problem_description{
+  width:440px;
+}
+.processing_status{
+  width:440px;
+  margin-top: 15px;
+  margin-right: 10px;
+}
+.contact_number{
+  width:215px;
+  margin-right: 10px;
+  margin-top: 15px;
+}
+.appointment_date{
+  width:215px;
+  margin-right: 10px;
+}
+.contact_address{
+  width:440px;
+}

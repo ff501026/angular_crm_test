@@ -1,0 +1,22 @@
+<app-header></app-header>
+<mat-sidenav-container class="sidenav-container" (backdropClick)="close()"  fixedInViewport="true">
+  <mat-sidenav #sidenav mode="side" (keydown.escape)="close()" disableClose class="sidenav" [fixedInViewport]="true">
+    <app-sidenav></app-sidenav>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <div class="wrapper">
+      <!-- <div class="row">
+        <div class="col-md-12" >
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="/main/dashboard">首頁</a></li>
+              <li class="breadcrumb-item active"></li>
+              <li class="breadcrumb-item active" aria-current="page">專案產銷會議</li>
+            </ol>
+          </nav>
+        </div>
+      </div> -->
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

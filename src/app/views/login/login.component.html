@@ -1,0 +1,63 @@
+<div class="login-wrapper">
+
+  <div class="login-box-group">
+    <div class="login-box">
+
+      <div class="login-logo">
+        專案管理系統
+        <!-- <img src="./assets/img/logo/logo.png" alt="logo"> -->
+      </div>
+      
+      <h1>
+        登入
+      </h1>
+
+      <div class="form-group">
+        <form [formGroup]="accountForm">
+          <mat-form-field appearance="outline">
+            <mat-label>請輸入帳號</mat-label>
+            <input matInput formControlName="username" placeholder="" type="text">
+            <mat-error *ngIf="accountForm.controls['username'].hasError('required')">
+              請輸入帳號
+            </mat-error>
+            
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>請輸入密碼</mat-label>
+            <input matInput formControlName="password" placeholder="" type="password">
+            <mat-error *ngIf="accountForm.controls['password'].hasError('required')">
+              請輸入密碼
+            </mat-error>
+            <mat-error *ngIf="accountForm.controls['password'].hasError('minlength')">
+              請輸入多於6個字元
+            </mat-error>
+          </mat-form-field>
+
+        </form>
+
+        <div class="login-btn-group">
+          <a routerLink="/main">
+            忘記密碼?
+          </a>
+          <a class="btn" (click)="onSubmit()">
+            登入
+          </a>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div class="language-select-group">
+        <span class="">‪
+          繁體中文
+          <mat-icon aria-hidden="false" aria-label="icon">arrow_drop_down</mat-icon>
+        </span>
+      </div>
+      <div class="description-group">
+        <a href="/" target="_blank">說明</a>
+        <a href="/" target="_blank">隱私權</a>
+        <a href="/" target="_blank">條款</a>
+      </div>
+    </footer>
+  </div>
+  

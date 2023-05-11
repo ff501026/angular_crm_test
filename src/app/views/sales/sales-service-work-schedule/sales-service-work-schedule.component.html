@@ -1,0 +1,148 @@
+
+<div class="container" >
+    <!--標題-->
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="/main/dashboard">首頁</a></li>
+              <li class="breadcrumb-item active">業務</li>
+              <li class="breadcrumb-item active" aria-current="page">業務顧客拜訪紀錄</li>
+            </ol>
+          </nav>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <div class="left">
+                <h1>
+                    <mat-icon>description</mat-icon>
+                    <span class="text-left">
+                      業務顧客拜訪紀錄
+                    </span>
+                </h1>
+            </div>
+        </div>
+    </div>
+    <div class="row" >
+      <div class="col-md-12">
+        <div class="form-group pt-0 pb-3">
+              <!--表格-->
+              <mat-card class="card table">
+                    <div class="example-container">
+                      <mat-form-field appearance="outline" class="example-form-field">
+                        <mat-label>拜訪日期</mat-label>
+                        <input matInput [matDatepicker]="datepicker">
+                        <mat-datepicker-toggle matSuffix [for]="datepicker"></mat-datepicker-toggle>
+                        <mat-datepicker #datepicker>
+                        </mat-datepicker>
+                      </mat-form-field> 
+                      <mat-form-field appearance="outline">
+                        <mat-label>業務人員</mat-label>
+                        <mat-select>
+                          <mat-option value="all">- 全部 -</mat-option>
+                          <mat-option value="member1">0165 高連俊</mat-option>
+                          <mat-option value="member2">0295 洪政瑋</mat-option>
+                          <mat-option value="member3">0319 郭李造韋</mat-option>
+                        </mat-select>
+                      </mat-form-field>
+                      <mat-form-field appearance="outline">
+                        <mat-label>客戶/廠別</mat-label>
+                        <mat-select>
+                          <mat-option value="all2">- 全部 -</mat-option>
+                          <mat-option value="client1">ASE</mat-option>
+                          <mat-option value="client2">ASE & NXP</mat-option>
+                          <mat-option value="client3">ASE & OSE</mat-option>
+                        </mat-select>
+                      </mat-form-field>
+                      <button mat-button class="btn-normal-none reset ml-10">查詢</button>
+                      <button mat-button class="btn-normal-none reset ml-10">當週</button>
+                      <button mat-button class="btn" (click)="doPost()" >新增</button>
+                    </div>
+              </mat-card>
+            </div>
+          </div>
+  </div>
+    <!--顯示資料區域-->
+    <div class="row">
+        <div class="col-md-12">
+            <div class="form-group pt-0 pb-3">
+                <!--表格-->
+                <mat-card class="card table">
+                    <div class="table-container">
+                      <!--
+                        <h5 class="">治具需求單列表</h5>
+                        <hr>
+                        -->
+                        <table mat-table [dataSource]="datasSource" class="">
+                            <!-- j_id -->
+                            <ng-container matColumnDef="j_id">
+                                <th mat-header-cell *matHeaderCellDef>
+                                  <button mat-mini-fab color="basic" class="table-btn-none">
+                                    <mat-icon>keyboard_arrow_left</mat-icon>
+                                </button>
+                                  45週
+                                  <button mat-mini-fab color="basic" class="table-btn-none">
+                                    <mat-icon>keyboard_arrow_right</mat-icon>
+                                </button>
+                                 </th>
+                                <td mat-cell *matCellDef="let element"> {{element.j_id}} </td>
+                            </ng-container>
+                            <!-- summary -->
+                            <ng-container matColumnDef="summary">
+                                <th mat-header-cell *matHeaderCellDef> 2021/10/31
+                                  星期日 </th>
+                                <td mat-cell *matCellDef="let element"> {{element.summary}} </td>
+                            </ng-container>
+                            <!-- c_name -->
+                            <ng-container matColumnDef="c_name">
+                                <th mat-header-cell *matHeaderCellDef> 2021/11/01
+                                  星期一 </th>
+                                <td mat-cell *matCellDef="let element"> {{element.c_name}} </td>
+                            </ng-container>
+                            <!-- liaison_phone -->
+                            <ng-container matColumnDef="liaison_phone">
+                                <th mat-header-cell *matHeaderCellDef> 2021/11/02
+                                  星期二 </th>
+                                <td mat-cell *matCellDef="let element"> {{element.liaison_phone}} </td>
+                            </ng-container>
+                            <!-- creater -->
+                            <ng-container matColumnDef="creater">
+                                <th mat-header-cell *matHeaderCellDef> 2021/11/03
+                                  星期三 </th>
+                                <td mat-cell *matCellDef="let element"> {{element.creater}} </td>
+                            </ng-container>
+                            <!-- date_for_respond -->
+                            <ng-container matColumnDef="date_for_respond">
+                                <th mat-header-cell *matHeaderCellDef> 2021/11/04
+                                  星期四 </th>
+                                <td mat-cell *matCellDef="let element"> {{element.date_for_respond}} </td>
+                            </ng-container>
+                            <!-- date_for_demand -->
+                            <ng-container matColumnDef="date_for_demand">
+                                <th mat-header-cell *matHeaderCellDef> 2021/11/05
+                                  星期五 </th>
+                                <td mat-cell *matCellDef="let element"> {{element.date_for_demand}} </td>
+                            </ng-container>
+                            <!-- c_id -->
+                            <ng-container matColumnDef="c_id">
+                                <th mat-header-cell *matHeaderCellDef> 2021/11/06
+                                  星期六 </th>
+                                <td mat-cell *matCellDef="let element"> {{element.c_id}} </td>
+                            </ng-container>
+  
+                            <tr mat-header-row *matHeaderRowDef="displayedColumn"></tr>
+                            <tr mat-row *matRowDef="let row; columns: displayedColumn;"></tr>
+                          </table>
+                          <!-- <mat-paginator #paginator [length]="" [pageIndex]="0" [pageSize]="5" [pageSizeOptions]="[5, 10, 15]" [showFirstLastButtons]="true">
+                          </mat-paginator> -->
+                    </div>
+  
+                </mat-card>
+            </div>
+        </div>
+    </div>
+  
+  </div>
+  

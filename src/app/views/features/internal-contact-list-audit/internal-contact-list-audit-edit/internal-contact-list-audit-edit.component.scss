@@ -1,0 +1,98 @@
+@import '/src/scss/container_children';
+@import '/src/scss/custom';
+.addbutton{
+  box-shadow: none !important;
+  background-color: #cfcfcf;
+}
+.pt-30{
+  padding-top: 30px;
+}
+.mr-10{
+margin-right: 10px;
+}
+.example-h2 {
+  margin: 10px;
+}
+
+.example-section {
+  display: flex;
+  align-content: center;
+  align-items: center;
+  height: 60px;
+}
+
+.example-margin {
+  margin: 0 10px;
+}
+.mat-tab-group {
+  margin-bottom: 48px;
+}
+mat-form-field{
+  margin-top: 10px;
+}
+.Classification{
+  width: 200px;
+  margin-left: 16px;
+  margin-right: 20px;
+}
+.replied_date{
+  width:95%;
+  margin-left: 16px;
+}
+.text-context-g{
+  color:gray;
+}
+.text-context-r{
+  color:red;
+}
+.request_date{
+  width: 100%;
+}
+.summary_description{
+  width:95%;
+  margin-left: 16px;
+  margin-top: -30px;
+}
+.form_text{
+  margin-left: 13px;
+  margin-top: 15px;
+}
+.name{
+   color: #FF3D57;
+}
+.date{
+  margin-right: 20px;
+  color: #3f5eb5;
+}
+.handling_situation{
+  margin-left: 5px;
+  margin-right: 10px;
+  width: 42%;
+}
+.line{
+  margin-top: -10px;
+}
+.text-context-date{
+  margin-left: 20px;
+}
+.mr-10{
+  margin-right: 10px;
+}
+.blue-text{
+  margin-bottom: 10px;
+  text-align: start;
+  margin-left: 16px;
+  color: #3f5eb5;
+}
+td{
+  text-align: start;
+}
+.deepblue-text{
+  color: #3f5eb5;
+}
+.red-text{
+  color: #FF3D57;
+}
+.title{
+  font-size: 16px;
+}

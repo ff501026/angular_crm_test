@@ -1,0 +1,105 @@
+<div class="offcanvas-header" style="width: 450px;">
+    <h2 class="offcanvas-title" id="offcanvasLabel" style="margin-left: -18px;">業務拜訪紀錄</h2>
+    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close" mat-dialog-close></button>
+  </div>
+  <form action="" style="width: 465px;">
+    <mat-dialog-content class="mat-typography" style="padding-top: 10px;">
+      <label> 業務人員：</label>
+      <label> 吳瓊伃</label>
+      <mat-radio-group aria-label="Select an option" style="margin-left: 75px;">
+        <mat-radio-button value="1">新機</mat-radio-button>
+        <mat-radio-button value="2">舊機延伸</mat-radio-button>
+        <mat-radio-button value="3">問題改善</mat-radio-button>
+      </mat-radio-group>
+      <table style="margin-top: 15px;">
+        <tr>
+          <td>
+            <mat-form-field appearance="outline" class="example-form-field"  style="width:209px">
+              <mat-label>日期</mat-label>
+              <input matInput [matDatepicker]="datepicker">
+              <mat-datepicker-toggle matSuffix [for]="datepicker"></mat-datepicker-toggle>
+              <mat-datepicker #datepicker>
+              </mat-datepicker>
+            </mat-form-field> 
+          </td>
+          <td>
+            <mat-form-field appearance="outline" style="width:209px">
+              <mat-label>時間</mat-label>
+              <mat-select>
+                <mat-option value="1">08</mat-option>
+                <mat-option value="2">09</mat-option>
+                <mat-option value="3">10</mat-option>
+                <mat-option value="4">11</mat-option>
+                <mat-option value="5">12</mat-option>
+                <mat-option value="6">13</mat-option>
+                <mat-option value="7">14</mat-option>
+                <mat-option value="8">15</mat-option>
+                <mat-option value="9">16</mat-option>
+                <mat-option value="10">17</mat-option>
+                <mat-option value="11">18</mat-option>
+                <mat-option value="12">19</mat-option>
+                <mat-option value="13">20</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </td>
+        </tr>
+      </table>
+      <mat-form-field  appearance="outline" style="width:440px">
+        <mat-label>客戶/廠別</mat-label>
+        <input matInput #input  placeholder="輸入客戶/廠別">
+      </mat-form-field>
+      <mat-form-field appearance="outline" style="width:140px;margin-right: 10px;">
+        <mat-label> 選擇機型</mat-label>
+        <mat-select>
+          <mat-option value="1">08</mat-option>
+          <mat-option value="2">09</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field appearance="outline" style="width:140px;margin-right: 10px;">
+        <mat-label> 選擇專案代號</mat-label>
+        <mat-select>
+          <mat-option value="1">08</mat-option>
+          <mat-option value="2">09</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field appearance="outline" style="width:140px">
+        <mat-label> 選擇出廠序號</mat-label>
+        <mat-select>
+          <mat-option value="1">08</mat-option>
+          <mat-option value="2">09</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field   appearance="outline" style="width:140px;margin-right: 10px;">
+        <mat-label>自訂機型</mat-label>
+        <input matInput #input  placeholder="選擇機型">
+      </mat-form-field>
+      <mat-form-field   appearance="outline" style="width:140px;margin-right: 10px;">
+        <mat-label>自訂專案代號</mat-label>
+        <input matInput #input placeholder="選擇專案代號">
+      </mat-form-field>
+      <mat-form-field appearance="outline" style="width:140px">
+        <mat-label>自訂出廠序號</mat-label>
+        <input matInput #input placeholder="選擇出廠序號">
+      </mat-form-field>
+      <mat-form-field appearance="outline" style="width:440px">
+        <mat-label>拜訪紀錄</mat-label>
+        <textarea matInput placeholder="輸入拜訪紀錄"></textarea>
+      </mat-form-field>
+  
+    </mat-dialog-content>
+    <mat-dialog-actions class="text-center">
+      <div class="">
+        <button mat-button class="btn-normal-none reset" type="reset">回復重填</button>
+          <button mat-button class="btn">資料儲存</button>
+      </div>
+    </mat-dialog-actions>
+  </form>
+  
+  <!-- <mat-dialog-actions align="end">
+    <button mat-raised-button mat-dialog-close>離開</button>
+    <button mat-raised-button [mat-dialog-close]="true" style="background-color: #6ea7fc;color:white;" >資料儲存</button>
+  </mat-dialog-actions> -->
+  
+
+  
+  

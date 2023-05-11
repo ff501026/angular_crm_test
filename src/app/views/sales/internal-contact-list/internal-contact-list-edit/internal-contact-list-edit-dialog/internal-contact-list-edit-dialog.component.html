@@ -1,0 +1,125 @@
+<div class="offcanvas-header">
+    <h2 class="offcanvas-title" id="offcanvasLabel">新建任務</h2>
+    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close" mat-dialog-close></button>
+</div>
+<form >
+    <mat-dialog-content>
+        <table class="" cellspacing="0">
+            <tr>
+                <td>
+                    <mat-form-field appearance="outline" >
+                        <mat-label>*任務代號 </mat-label>
+                        <input matInput placeholder="20210908" type="text" disabled>
+                    </mat-form-field>
+                </td>
+                <td>
+                    <mat-form-field appearance="outline">
+                        <mat-label>*任務名稱</mat-label>
+                        <input matInput placeholder="請輸入任務名稱" type="text" formControlName="name"  name="name" ngDefaultControl>
+                    </mat-form-field>
+                </td>
+            </tr>
+        </table>
+        <mat-form-field appearance="outline" class="w-100p">
+            <mat-label>*任務描述</mat-label>
+            <input matInput placeholder="請輸入任務描述" type="text"  formControlName="remark"  name="remark" ngDefaultControl>
+        </mat-form-field>
+        
+        <table class="" cellspacing="0">
+            <tr>
+                <td>
+                    <!-- <mat-form-field appearance="outline">
+                        <mat-label>*前一任務</mat-label>
+                        <mat-select>
+                            <mat-option *ngFor="let select of ['A','B','C','D','E','F']" [value]="select" title="{{select}}">
+                                {{select}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field> -->
+                    <mat-form-field class="example-full-width" appearance="outline">
+                        <mat-label>前一任務</mat-label>
+                        <input type="text"
+                               placeholder="前一任務"
+                               aria-label="前一任務"
+                               matInput
+                               [matAutocomplete]="auto"
+                                formControlName="last_task"  name="last_task" ngDefaultControl>
+                        <mat-autocomplete #auto="matAutocomplete">
+                          <mat-option>
+                            未指定
+                          </mat-option>
+                        </mat-autocomplete>
+                    </mat-form-field>
+                </td>
+                <td>
+                    <mat-form-field appearance="outline">
+                        <mat-label>*主要負責人</mat-label>
+                        <input matInput placeholder="請輸入主要負責人" type="text"  formControlName="principal"  name="principal" ngDefaultControl>
+                    </mat-form-field>
+                </td>
+            </tr>
+        </table>
+
+        <table class="" cellspacing="0">
+            <tr>
+                <td>
+                    <!-- <mat-form-field class="dateIpt-w" appearance="outline" >
+                        <mat-label>*專案起始日</mat-label>
+                        <input matInput [matDatepicker]="picker1"  formControlName="date_for_estimated_start"  name="date_for_estimated_start" ngDefaultControl>
+                        <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                        <mat-datepicker #picker1></mat-datepicker>
+                    </mat-form-field>
+                </td>
+                <td>
+                    <mat-form-field class="dateIpt-w" appearance="outline" >
+                        <mat-label>*專案結束日</mat-label>
+                        <input matInput [matDatepicker]="picker2"  formControlName="date_for_estimated_completion"  name="date_for_estimated_completion" ngDefaultControl>
+                        <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+                        <mat-datepicker #picker2></mat-datepicker>
+                    </mat-form-field> -->
+                    <mat-form-field appearance="outline">
+                        <mat-label>專案起迄日</mat-label>
+                        <mat-date-range-input [formGroup]="range" [rangePicker]="picker">
+                          <input matStartDate formControlName="start" placeholder="Start date">
+                          <input matEndDate formControlName="end" placeholder="End date">
+                        </mat-date-range-input>
+                        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                        <mat-date-range-picker #picker></mat-date-range-picker>
+                      
+                        <mat-error *ngIf="range.controls.start.hasError('matStartDateInvalid')">Invalid start date</mat-error>
+                        <mat-error *ngIf="range.controls.end.hasError('matEndDateInvalid')">Invalid end date</mat-error>
+                      </mat-form-field>
+                </td>
+                
+            </tr>
+        </table>
+        <!-- <mat-form-field appearance="outline" class="w-100p">
+            <mat-label>比較基準</mat-label>
+            <mat-date-range-input >
+                <input matStartDate placeholder="起始日" [(ngModel)]="time_for_start" formControlName="time_for_start"  name="time_for_start" ngDefaultControl>
+                <input matEndDate placeholder="結束日" [(ngModel)]="time_for_done" formControlName="time_for_done"  name="time_for_done" ngDefaultControl>
+            </mat-date-range-input>
+            <mat-datepicker-toggle matSuffix [for]="Picker"></mat-datepicker-toggle>
+            <mat-date-range-picker #Picker></mat-date-range-picker>
+        </mat-form-field> -->
+        <table>
+            <tr>
+                <td>
+                    <mat-form-field appearance="outline">
+                        <mat-label >*工時</mat-label>
+                        <input matInput type="text" placeholder="請輸入工時" type="text"  formControlName="labor_hour"  name="labor_hour" ngDefaultControl>
+                    </mat-form-field>  
+                </td>
+                <td>
+                    <mat-checkbox class="ml-10"  formControlName="landmark"  name="landmark" ngDefaultControl>里程碑</mat-checkbox>
+                    <!-- <mat-checkbox class="ml-10"  formControlName="sales_order_number"  name="sales_order_number" ngDefaultControl>銷售單號</mat-checkbox> -->
+                </td>
+            </tr>
+        </table>
+        
+    </mat-dialog-content>
+    <mat-dialog-actions>
+        <button mat-button class="btn-normal-none reset" type="reset" >清除</button>
+        <button mat-button class="btn" >儲存</button>
+    </mat-dialog-actions>
+</form>

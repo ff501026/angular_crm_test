@@ -1,0 +1,76 @@
+<div class="offcanvas-header card-h">
+    <h2 class="offcanvas-title" id="offcanvasLabel">故障申報申請</h2>
+    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close" mat-dialog-close></button>
+  </div>
+  <form action="" class="form-h">
+    <mat-dialog-content class="mat-typography">
+      <label> 申請人員：</label>
+      <label> 吳瓊伃</label>
+      <table>
+        <tr>
+          <mat-form-field appearance="outline" class="device_number">
+            <mat-label> 選擇設備號碼</mat-label>
+            <mat-select>
+              <mat-option value="1">08</mat-option>
+              <mat-option value="2">09</mat-option>
+            </mat-select>
+          </mat-form-field>
+          <mat-form-field appearance="outline" class="fault_conditions">
+            <mat-label> 選擇故障情況</mat-label>
+            <mat-select>
+              <mat-option value="1">08</mat-option>
+              <mat-option value="2">09</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </tr>
+      </table>
+      <mat-form-field appearance="outline" class="problem_description">
+        <mat-label>問題描述</mat-label>
+        <textarea matInput placeholder="輸入問題描述"></textarea>
+      </mat-form-field>
+      <label> 聯絡人：</label>
+      <label> 陳先生</label>
+      <table>
+        <tr>
+          <mat-form-field  appearance="outline" class="contact_number">
+            <mat-label>連絡電話</mat-label>
+            <input matInput #input  placeholder="輸入連絡電話">
+          </mat-form-field>
+          <mat-form-field appearance="outline" class="appointment_date">
+            <mat-label>選擇約修日期</mat-label>
+            <input matInput [matDatepicker]="datepicker">
+            <mat-datepicker-toggle matSuffix [for]="datepicker"></mat-datepicker-toggle>
+            <mat-datepicker #datepicker>
+              <mat-datepicker-actions>
+                <button mat-button matDatepickerCancel>取消</button>
+                <button mat-raised-button color="primary" matDatepickerApply>確定</button>
+              </mat-datepicker-actions>
+            </mat-datepicker>
+          </mat-form-field>
+        </tr>
+      </table>
+      <mat-form-field  appearance="outline" class="contact_address">
+        <mat-label>連絡地址</mat-label>
+        <input matInput #input  placeholder="輸入連絡地址">
+      </mat-form-field>
+      <label>維修人員：</label>
+      <mat-form-field appearance="outline" class="maintenance_staff">
+        <mat-label> 選擇維修人員</mat-label>
+        <mat-select>
+          <mat-option value="1">08</mat-option>
+          <mat-option value="2">09</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </mat-dialog-content>
+    <mat-dialog-actions class="text-center">
+      <div class="">
+        <button mat-button class="btn-normal-none reset" type="reset">刪除</button>
+        <button mat-button class="btn">儲存</button>
+      </div>
+    </mat-dialog-actions>
+  </form>
+  
+  <!-- <mat-dialog-actions align="end">
+      <button mat-raised-button mat-dialog-close>離開</button>
+      <button mat-raised-button [mat-dialog-close]="true" style="background-color: #6ea7fc;color:white;" >資料儲存</button>
+    </mat-dialog-actions> -->

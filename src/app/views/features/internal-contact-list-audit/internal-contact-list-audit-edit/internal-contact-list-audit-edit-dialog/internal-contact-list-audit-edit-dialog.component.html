@@ -1,0 +1,83 @@
+<div class="offcanvas-header">
+    <h2 class="offcanvas-title" id="offcanvasLabel">人員選定</h2>
+    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close" mat-dialog-close></button>
+</div>
+<form>
+    <mat-dialog-content style="width: 400px;">
+        <mat-form-field appearance="outline" class="handling_situation col-12">
+            <mat-label>主旨</mat-label>
+            <input matInput #input placeholder="主旨">
+          </mat-form-field>
+          <div class="row" >
+              <div class="col-md-7">
+                <mat-form-field appearance="outline" class="col-12">
+                    <mat-label>單位</mat-label>
+                    <mat-select>
+                      <mat-option *ngFor="let department of departments" 
+                      [value]="department.value" 
+                      [(ngModel)]="selectedDepartment" 
+                      name="department">
+                        {{department.viewValue}}
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                
+              </div>
+              <div class="col-md-5">
+                <mat-form-field class="request_date col-12" appearance="outline">
+                    <mat-label>預定完工日</mat-label>
+                    <input matInput [matDatepickerFilter]="myFilter" [matDatepicker]="picker1" [formControl]="date">
+                    <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                    <mat-datepicker #picker1></mat-datepicker>
+                  </mat-form-field>
+              </div>
+          </div>
+        <div class="row">
+            <div class="col-8">
+                <mat-form-field appearance="outline" class="col-12">
+                    <mat-label>人員</mat-label>
+                    <mat-select>
+                      <mat-option *ngFor="let employee of employees" 
+                      [value]="employee.value" 
+                      [(ngModel)]="selectedEmployee" 
+                      name="employee">
+                        {{employee.viewValue}}
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field>
+            </div>
+            <div class="col-4 mt-3">
+                <button mat-button class="btn-normal" (click)="addSelectValues()">
+                    <mat-icon>add</mat-icon>
+                </button>
+            </div>
+        </div>
+        <div class="bg-import">
+            <div class="row">
+                <div class="col">
+                    <b>
+                        <h4>
+                            已派工列表:({{selectedTable}})
+                        </h4>
+                    </b>
+                </div>
+            </div>
+            <div class="row"  >
+                <div class="col mt-2 ml-2">
+                    <h4>
+                       
+                    </h4>
+                </div>
+            </div>
+        </div>
+        
+    </mat-dialog-content>
+    <mat-dialog-actions class="text-center ">
+        <div class="">
+            <button mat-button class="btn-normal-none reset" type="reset">清除</button>
+            <button mat-button class="btn" >儲存</button>
+        </div>
+    </mat-dialog-actions>
+
+    
+</form>

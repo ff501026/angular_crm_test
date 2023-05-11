@@ -1,0 +1,60 @@
+<div class="container mt-5" id="depatment-page">
+  <div class="row text-center">
+    <div class="col text-center">
+      <h1>部門管理</h1>
+    </div>
+  </div>
+  <div class="row text-center">
+    <div class="col text-center">
+      <button id="user-create" mat-raised-button color="primary" (click)="openCreate()" >創建</button>
+    </div>
+  </div>
+  <div class="row text-center my-3">
+    <div class="col text-center">
+      <mat-table [dataSource]="organizationDataSource" class="mat-elevation-z8">
+        <!--ID-->
+        <ng-container matColumnDef="ID">
+          <mat-header-cell *matHeaderCellDef>ID</mat-header-cell>
+          <mat-cell *matCellDef="let row">{{row.ID}}</mat-cell>
+        </ng-container>
+        <!--部門-->
+        <ng-container matColumnDef="department">
+          <mat-header-cell *matHeaderCellDef>部門</mat-header-cell>
+          <mat-cell *matCellDef="let row">{{row.department}}</mat-cell>
+        </ng-container>
+        <!--是否子部門-->
+        <ng-container matColumnDef="is_children">
+          <mat-header-cell *matHeaderCellDef>是否子部門</mat-header-cell>
+          <mat-cell *matCellDef="let row">{{row.is_children}}</mat-cell>
+        </ng-container>
+        <!--上層部門-->
+        <ng-container matColumnDef="upper_department">
+          <mat-header-cell *matHeaderCellDef>上層部門</mat-header-cell>
+          <mat-cell *matCellDef="let row">{{row.upper_department}}</mat-cell>
+        </ng-container>
+        <!--管理-->
+        <ng-container matColumnDef="management">
+          <mat-header-cell *matHeaderCellDef>
+            <u>管理</u>
+          </mat-header-cell>
+          <mat-cell *matCellDef="let row">
+            <button mat-button color="primary" (click)="openEdit(row)" >編輯</button>
+            <button mat-button color="warn" (click)="openDel(row)">刪除</button>
+          </mat-cell>
+        </ng-container>
+      
+       <mat-header-row *matHeaderRowDef="['ID', 'department',  'is_children','upper_department', 'management']"></mat-header-row>
+       <mat-row *matRowDef="let userRow; columns: ['ID', 'department', 'is_children', 'upper_department','management']"></mat-row>
+      </mat-table>
+      <mat-paginator
+                     [length]="totalCount"
+                     [pageIndex]="0"
+                     [pageSize]="10"
+                     [pageSizeOptions]="[5, 10, 15]"
+                     class="mat-elevation-z8">
+      </mat-paginator>
+    </div>
+  </div>
+</div>
+
+

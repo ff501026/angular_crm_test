@@ -1,0 +1,97 @@
+
+<div class="offcanvas-header" style="width: 440px;">
+    <h2 class="offcanvas-title" id="offcanvasLabel">進度回報-業務</h2>
+    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close" mat-dialog-close></button>
+  </div>
+<form style="width: 400px;">
+    <mat-dialog-content>
+        <mat-list>
+            <mat-list-item>
+                <h3>單號：</h3>
+                <h3>12345678</h3>
+            </mat-list-item>
+        </mat-list>
+        <div class="row">
+            <div class="col-6">
+                <mat-form-field appearance="outline" class="pd-1" >
+                    <mat-label>產品需求</mat-label>
+                    <input matInput >
+                  </mat-form-field>
+            </div>
+            <div class="col-6">
+                <mat-form-field appearance="outline" class="pd-1">
+                    <mat-label>數量SET</mat-label>
+                    <input matInput >
+                  </mat-form-field>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6">
+                <mat-form-field appearance="outline" class="pd-1" >
+                    <mat-label>總成品號</mat-label>
+                    <input matInput >
+                  </mat-form-field>
+            </div>
+            <div class="col-6">
+                <mat-form-field appearance="outline" class="pd-1">
+                    <mat-label>數量</mat-label>
+                    <input matInput >
+                  </mat-form-field>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6">
+                <mat-form-field appearance="outline" class="pd-1" >
+                    <mat-label>備註</mat-label>
+                    <input matInput >
+                  </mat-form-field>
+            </div>
+            <div class="col-6">
+                <mat-form-field appearance="outline" class="pd-1">
+                    <mat-label>回覆</mat-label>
+                    <input matInput >
+                  </mat-form-field>
+            </div>
+        </div>
+        <div class="col-6">
+            <mat-form-field appearance="outline">
+                <mat-label>內部訂單日</mat-label>
+                <input matInput [matDatepicker]="picker">
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+              </mat-form-field>
+        </div>
+        <div class="row">
+
+            <div class="col-6">
+                <mat-form-field appearance="outline" class="pd-1">
+                    <mat-label>內部訂單號碼</mat-label>
+                    <input matInput >
+                  </mat-form-field>
+            </div>
+            <div class="col-6">
+                <mat-form-field appearance="outline" class="pd-1">
+                <mat-label>數量</mat-label>
+                <input matInput >
+              </mat-form-field>
+            </div>
+            
+        </div>
+        <div class="row">
+            <mat-form-field appearance="outline" class="col-12 pr-0">
+                <mat-label>備註回覆</mat-label>
+                <textarea matInput></textarea>
+                </mat-form-field>
+        </div>
+    </mat-dialog-content>
+    <mat-dialog-actions class="text-center">
+        <div class="col-12">
+            <button mat-button class="btn-normal-none reset" type="reset">回復重填</button>
+            <button mat-button class="btn-normal-none" >儲存備註</button>
+            <button mat-button class="btn" >確認送出</button>
+        </div>
+    </mat-dialog-actions>
+    
+
+    
+</form>

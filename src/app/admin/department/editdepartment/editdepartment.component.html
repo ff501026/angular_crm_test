@@ -1,0 +1,34 @@
+
+<h2 align="center">編輯部門</h2>
+<form [formGroup]="editDepartmentForm" (ngSubmit)="onSubmit()">
+<mat-dialog-content class="mat-typography">
+<mat-grid-list cols="2" rowHeight="20vh"  >
+  <mat-grid-tile >
+
+    <mat-form-field>
+      <mat-label>部門</mat-label>
+      <input type="text" id="department" name="department" matInput placeholder="department" formControlName="department"  required>
+    </mat-form-field>
+  </mat-grid-tile>
+  <mat-grid-tile >
+  <mat-radio-group aria-label="是否子部門" formControlName="is_children">
+    <mat-radio-button value="是">是</mat-radio-button>
+    <mat-radio-button value="否">否</mat-radio-button>
+  </mat-radio-group>
+ </mat-grid-tile>
+
+  <mat-grid-tile>
+    <mat-form-field>
+      <mat-label>上層部門</mat-label>
+      <input type="text" id="upper_department" name="upper_department" matInput formControlName="upper_department">
+    </mat-form-field>
+  </mat-grid-tile>
+</mat-grid-list>
+
+
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>取消</button>
+  <button type="submit" mat-button class="primary" >編輯</button>
+</mat-dialog-actions>
+</form>

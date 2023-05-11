@@ -1,0 +1,131 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="/main/dashboard">首頁</a></li>
+                    <!-- <li class="breadcrumb-item active">專案任務工作回報</li> -->
+                </ol>
+            </nav>
+        </div>
+    </div>
+    <!--標題-->
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <div class="left">
+                <h1>
+                    <mat-icon>description</mat-icon>
+                    <span class="text-left">
+                        個人首頁
+                    </span>
+                </h1>
+            </div>
+        </div>
+    </div>
+    <!--顯示資料區域-->
+    <!--查詢區域-->
+    <div class="row">
+
+        <div class="col-md-9 text-center">
+            <div class="form-group pt-0 pb-3">
+                <mat-card class="card search-group" style="height: 490px;">
+                    <mat-tab-group dynamicHeight>
+                        <mat-tab>
+                            <ng-template mat-tab-label>
+                                專案任務
+                            </ng-template>
+                            <div class="container">
+                                <div class="row pt-3">
+                                    <div class="col text-center">
+                                        <h4>
+                                            -今日無待辦事項-
+                                        </h4>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </mat-tab>
+                        <mat-tab>
+                            <ng-template mat-tab-label>
+                                近期會議
+                            </ng-template>
+
+                        </mat-tab>
+                        <mat-tab>
+                            <ng-template mat-tab-label>
+                                課需單
+                            </ng-template>
+
+                        </mat-tab>
+                        <mat-tab>
+                            <ng-template mat-tab-label>
+                                製具需求單
+                            </ng-template>
+
+                        </mat-tab>
+                        <mat-tab>
+                            <ng-template mat-tab-label>
+                                客服資源申請單
+                            </ng-template>
+
+                        </mat-tab>
+                        <mat-tab>
+                            <ng-template mat-tab-label>
+                                近期會議
+                            </ng-template>
+
+                        </mat-tab>
+
+                    </mat-tab-group>
+                </mat-card>
+            </div>
+        </div>
+        <div class="col-md-3 text-center">
+            <div class="form-group pt-0 pb-3">
+                <mat-card class="card search-group" style="height:490px">
+                    <mat-card-content>
+                        <mat-list>
+                            <mat-list-item>
+                                <h3>個人待辦事項</h3>
+                            </mat-list-item>
+                        </mat-list>
+                        <hr>
+                        <mat-list>
+                            
+                            <mat-list-item>
+                                <a [routerLink]="['/main/internal-contact-list-audit']">
+                                    <h4>待審核治具需求單[1]</h4>
+                                </a>
+                                <mat-divider></mat-divider>
+                            </mat-list-item>
+                            <mat-list-item>
+                                <a [routerLink]="['/main/internal-contact-list-closed']">
+                                    <h4>待結案治具需求單[1]</h4>
+                                </a>
+                                <mat-divider></mat-divider>
+                            </mat-list-item>
+                            <mat-list-item>
+                                <a [routerLink]="['/main/internal-contact-list-audit-countersigner']">
+                                    <h4>待審核治具需求單(會簽人員)[1]</h4>
+                                </a>
+                                <mat-divider></mat-divider>
+                            </mat-list-item>
+                            <mat-list-item>
+                                <a [routerLink]="['/main/problem-handling-dispatch-worker']">
+                                    <h4>待派工故障故障申報單[1]</h4>
+                                </a>
+                                <mat-divider></mat-divider>
+                            </mat-list-item>
+                            <mat-list-item>
+                                <a [routerLink]="['/main/problem-handling-deal-with']">
+                                    <h4>待處理故障故障申報單[1]</h4>
+                                </a>
+                                <mat-divider></mat-divider>
+                            </mat-list-item>
+                        </mat-list>
+                    </mat-card-content>
+                </mat-card>
+            </div>
+        </div>
+    </div>
+</div>

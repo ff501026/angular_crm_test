@@ -1,0 +1,79 @@
+<!--標題-->
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="/main/dashboard">首頁</a></li>
+                    <li class="breadcrumb-item active">待派工故障申報單</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <div class="left">
+                <h1>
+                    <mat-icon>description</mat-icon>
+                    <span class="text-left">
+                        待派工故障申報單
+                    </span>
+                </h1>
+            </div>
+        </div>
+    </div>
+    <!--顯示資料區域-->
+    <div class="row">
+        <div class="col-md-12">
+            <div class="form-group pt-0 pb-3">
+                <!--表格-->
+                <mat-card class="card table">
+                    <div class="table-container">
+                     
+                        <h5 class="">待派工故障申報單列表</h5>
+                        <hr>
+                       
+                        <table mat-table [dataSource]="datasSource" class="">
+                            <!-- j_id -->
+                           
+                            <!-- summary -->
+                            <ng-container matColumnDef="summary">
+                                <th mat-header-cell *matHeaderCellDef> 申請日期 </th>
+                                <td mat-cell *matCellDef="let element"> {{element.summary}} </td>
+                            </ng-container>
+                            <!-- c_name -->
+                            <ng-container matColumnDef="c_name">
+                                <th mat-header-cell *matHeaderCellDef> 申請人員 </th>
+                                <td mat-cell *matCellDef="let element"> {{element.c_name}} </td>
+                            </ng-container>
+                            <!-- liaison_phone -->
+                            <ng-container matColumnDef="liaison_phone">
+                                <th mat-header-cell *matHeaderCellDef> 設備號碼 </th>
+                                <td mat-cell *matCellDef="let element"> {{element.liaison_phone}} </td>
+                            </ng-container>
+                            <ng-container matColumnDef="status">
+                                <th mat-header-cell *matHeaderCellDef> 狀態 </th>
+                                <td mat-cell *matCellDef="let element"> {{element.status}} </td>
+                            </ng-container>
+                            <!-- creater -->
+                            <ng-container matColumnDef="j_id">
+                              <th mat-header-cell *matHeaderCellDef style="text-align: right;">編輯</th>
+                              <td mat-cell *matCellDef="let element" style="text-align: right;"> 
+                                <button mat-mini-fab color="basic" class="table-btn-none" (click)="editItem()">
+                                <mat-icon>edit</mat-icon>
+                            </button></td>
+                          </ng-container>
+                            <tr mat-header-row *matHeaderRowDef="displayedColumn"></tr>
+                            <tr mat-row *matRowDef="let row; columns: displayedColumn;"></tr>
+                          </table>
+                          <!-- <mat-paginator #paginator [length]="" [pageIndex]="0" [pageSize]="5" [pageSizeOptions]="[5, 10, 15]" [showFirstLastButtons]="true">
+                          </mat-paginator> -->
+                    </div>
+                    <mat-paginator [length]="200" [pageSizeOptions]="[10, 50, 100]" aria-label="Select page">
+                    </mat-paginator>
+                </mat-card>
+            </div>
+        </div>
+      </div>
+
+</div>

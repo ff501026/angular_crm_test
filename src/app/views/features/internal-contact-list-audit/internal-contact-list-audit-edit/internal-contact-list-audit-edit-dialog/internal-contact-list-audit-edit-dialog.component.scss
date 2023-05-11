@@ -1,0 +1,15 @@
+@import '/src/scss/container_children';
+@import '/src/scss/custom';
+
+
+.bg-import{
+    display: block;
+    background: rgb(225, 225, 225);
+    border-radius: 10px;
+    padding: 15px;
+    padding-bottom: 0;
+
+    h4{
+        margin-bottom: 5px;
+    }
+  }

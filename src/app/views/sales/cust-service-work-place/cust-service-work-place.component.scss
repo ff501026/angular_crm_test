@@ -1,0 +1,35 @@
+@import '/src/scss/container_children';
+@import '/src/scss/custom';
+.example-h2 {
+  margin: 10px;
+}
+
+.example-section {
+  display: flex;
+  align-content: center;
+  align-items: center;
+  height: 60px;
+}
+
+.example-margin {
+  margin: 0 10px;
+}
+.mat-tab-group {
+  margin-bottom: 48px;
+}
+mat-form-field{
+  margin-top: 10px;
+}
+td{
+  padding: 0px;
+  text-align: left;
+}
+th{
+  text-align: left;
+}
+label{
+  margin-top: 30px;
+}
+.mr-10{
+  margin-right: 10px;
+}

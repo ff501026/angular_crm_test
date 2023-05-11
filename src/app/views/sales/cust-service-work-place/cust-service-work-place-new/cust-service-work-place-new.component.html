@@ -1,0 +1,179 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="/main/dashboard">首頁</a></li>
+          <li class="breadcrumb-item active">業務</li>
+          <li class="breadcrumb-item active">客戶廠別管理</li>
+          <li class="breadcrumb-item active" aria-current="page">客戶廠別管理-新增</li>
+        </ol>
+      </nav>
+    </div>
+</div>
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <div class="left">
+          <h1>
+            <mat-icon>description</mat-icon>
+            <span class="text-left">
+              客戶廠別管理-新增
+            </span>
+          </h1>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6 text-center">
+        <mat-card class="mat-card mat-focus-indicator card search-group">
+          <mat-card-content class="mat-card-content">
+            <div class="edit-form-group pt-2 pb-0">
+              <!-- <mat-form-field appearance="fill" class="example-form-field">
+                        <mat-label>Choose a date</mat-label>
+                        <input matInput [matDatepicker]="datepicker">
+                        <mat-datepicker-toggle matSuffix [for]="datepicker"></mat-datepicker-toggle>
+                        <mat-datepicker #datepicker>
+                          <mat-datepicker-actions>
+                            <button mat-button matDatepickerCancel>Cancel</button>
+                            <button mat-raised-button color="primary" matDatepickerApply>Apply</button>
+                          </mat-datepicker-actions>
+                        </mat-datepicker>
+                      </mat-form-field> -->
+              <mat-form-field appearance="outline" class="customer_site">
+                <mat-label>客戶廠別</mat-label>
+                <mat-select [(value)]="selected1">
+                  <mat-option value="all2">- 未指定 -</mat-option>
+                  <mat-option value="client1">APD HK</mat-option>
+                  <mat-option value="client2">ASESH</mat-option>
+                  <mat-option value="client3">Coherix</mat-option>
+                </mat-select>
+              </mat-form-field>
+              <mat-form-field appearance="outline" class="client_country">
+                <mat-label>客戶國家</mat-label>
+                <mat-select [(value)]="selected2">
+                  <mat-option value="all">國內</mat-option>
+                  <mat-option value="all2">國外</mat-option>
+                </mat-select>
+              </mat-form-field>
+              <mat-form-field appearance="outline" class="customer_area">
+                <mat-label>客戶地區</mat-label>
+                <mat-select [(value)]="selected3">
+                  <mat-option value="all2">- 未指定 -</mat-option>
+                  <mat-option value="client1">高雄</mat-option>
+                  <mat-option value="client3">新竹</mat-option>
+                </mat-select>
+              </mat-form-field>
+              <mat-form-field appearance="outline" style="width:30%;">
+                <mat-label></mat-label>
+                <input matInput #input placeholder=""  [(ngModel)]="input1">
+              </mat-form-field>
+  
+              <table>
+                <tr>
+                  <td>
+                <mat-form-field appearance="outline" class="instruction_manual">
+                  <mat-label>備註說明</mat-label>
+                  <input matInput #input placeholder="輸入備註說明" [(ngModel)]="ps">
+                </mat-form-field>
+              </td>
+              <td>
+                <mat-checkbox class="example-margin"  [(ngModel)]="checkbox1">啟用</mat-checkbox>
+              </td>
+              </tr>
+              </table>
+              <mat-form-field appearance="outline" class="model">
+                <mat-label>機型</mat-label>
+                <mat-select [(value)]="selected4">
+                  <mat-option value="all2">- 未指定 -</mat-option>
+                  <mat-option value="client1">BA1000</mat-option>
+                  <mat-option value="client3">BM1000</mat-option>
+                </mat-select>
+              </mat-form-field>
+  
+              <mat-form-field appearance="outline" class="machine_serial_number">
+                <mat-label>機台序號</mat-label>
+                <mat-select [(value)]="selected5">
+                  <mat-option value="all2">- 未指定 -</mat-option>
+                  <mat-option value="client1">BA1000</mat-option>
+                  <mat-option value="client3">BM1000</mat-option>
+                </mat-select>
+              </mat-form-field>
+              <mat-form-field appearance="outline" class="project_code">
+                <mat-label>專案代號</mat-label>
+                <mat-select [(value)]="selected6">
+                  <mat-option value="all2">- 未指定 -</mat-option>
+                  <mat-option value="client1">BA1000</mat-option>
+                  <mat-option value="client3">BM1000</mat-option>
+                </mat-select>
+              </mat-form-field>
+              
+             
+            </div>
+          </mat-card-content>
+          <mat-card-actions class="text-center" style="margin-bottom: 10px;">
+            <div class="example-container text-center">
+              <button mat-button class="btn-normal-none " style="margin-right: 10px;" (click)="exitItem()">離開</button>
+              <button mat-button class="btn-normal-none" style="margin-right: 10px;">刪除</button>
+              <button mat-button class="btn-normal-none "  (click)="resetInput()">清除</button>
+              <button mat-button class="btn" style="margin-right: 10px;">儲存</button>
+            </div>
+          </mat-card-actions>
+        </mat-card>
+      </div>
+      <div class="col-md-6 text-center">
+        <mat-card class="mat-card mat-focus-indicator card search-group">
+          <mat-card-content class="mat-card-content" >
+            <div class="edit-form-group pt-2 pb-0" >
+            <mat-tab-group mat-align-tabs="center" >
+              <mat-tab label="聯絡人" >
+                  <mat-form-field appearance="outline" class="group">
+                    <mat-label>集團/總公司</mat-label>
+                    <input matInput #input placeholder="輸入集團/總公司">
+                  </mat-form-field>
+                  <mat-form-field appearance="outline" style="width:30%;margin-right: 10px;">
+                    <mat-label></mat-label>
+                    <mat-select [(value)]="selectedOp">
+                      <mat-option [value]="option.value" *ngFor="let option of options">{{ option.viewValue }}
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                  <mat-form-field appearance="outline" style="width:30%;margin-right: 10px;">
+                    <mat-label></mat-label>
+                    <input matInput #input placeholder="">
+                  </mat-form-field>
+                  <mat-form-field appearance="outline" style="width:30%;">
+                    <mat-label></mat-label>
+                    <input matInput #input placeholder="">
+                  </mat-form-field>
+  
+  
+                  <mat-form-field appearance="outline" style="width:94%;margin-bottom: 10px;">
+                    <mat-label></mat-label>
+                    <input matInput #input placeholder="">
+                  </mat-form-field>
+         
+                  <div class="example-container text-center" style="margin-top: 25px;margin-bottom: 5px;">
+                    <button mat-button class="btn-normal-none" style="margin-right: 10px;">關聯圖</button> 
+                    <button mat-button class="btn-normal-none">重新整理</button>
+                    <button mat-button class="btn" style="margin-right: 10px;">建立資料</button>
+                  </div>
+              </mat-tab>
+              <mat-tab label="DailyReport">
+               <label>-尚未建立任何資料-</label> 
+              </mat-tab>
+              <mat-tab label="CRM">
+                <label>-尚未建立任何資料-</label> 
+              </mat-tab>
+              <mat-tab label="工作與出機排程">
+                <label>-尚未建立任何資料-</label> 
+              </mat-tab>
+              <mat-tab label="業務顧客拜訪紀錄">
+                <label>-尚未建立任何資料-</label> 
+              </mat-tab>
+            </mat-tab-group>
+          </div>
+        </mat-card-content>
+      </mat-card>
+      </div>
+    </div>
+  </div>
